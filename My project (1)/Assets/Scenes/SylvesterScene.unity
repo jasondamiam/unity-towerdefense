@@ -6438,7 +6438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d79e3551f705b04a8b9c7c2e6503579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HowClose: 20
+  HowClose: 4
   Head: {fileID: 105139011}
 --- !u!1 &300828725
 GameObject:
