@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<Vector3> vindpunten = new List<Vector3>();
-    public int snelheid = 10;
+    public float snelheid = 10;
     public int naartoe;
     
     void Start()
