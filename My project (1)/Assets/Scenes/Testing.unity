@@ -508,6 +508,12 @@ MonoBehaviour:
   freeLookSensitivity: 3
   zoomSensitivity: 10
   fastZoomSensitivity: 50
+  minusyThreshold: -20
+  yThreshold: 100
+  minusxThreshold: -100
+  xThreshold: 100
+  minuszThreshold: -100
+  zThreshold: 100
 --- !u!1 &1055177957
 GameObject:
   m_ObjectHideFlags: 0
