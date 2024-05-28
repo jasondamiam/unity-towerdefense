@@ -9,9 +9,19 @@ public class TowerPlacement : MonoBehaviour
     public GameObject towerPrefab;
     private GameObject currentTower;
     public LayerMask groundLayer;
-    public LayerMask placementCheck;
+    public LayerMask placementLayer;
     private bool isPlacing = false;
-    private float towerHeight;
+    private Vector3 towerSize;
+    private string temporaryLayerName = "IgnorePlacement";
+
+    void Start()
+    {
+        // Ensure the temporary layer exists
+        if (LayerMask.NameToLayer(temporaryLayerName) == -1)
+        {
+            Debug.LogError("Layer 'IgnorePlacement' does not exist. Please create it in the Inspector.");
+        }
+    }
 
     void Update()
     {
@@ -25,18 +35,22 @@ public class TowerPlacement : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
                 {
                     Vector3 placementPosition = hit.point;
-                    placementPosition.y += towerHeight / 2;  // Adjust the position based on the tower height
+                    placementPosition.y += towerSize.y / 2;  // Adjust the position based on the tower height
                     currentTower.transform.position = placementPosition;
 
-                    if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+                    // Check for collisions with other objects and objects with the "CantPlace" tag
+                    if (!IsColliding(placementPosition) && !IsCollidingWithTag(placementPosition, "CantPlace"))
                     {
-                        PlaceTower();
+                        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+                        {
+                            PlaceTower();
+                        }
                     }
                 }
             }
 
             // Check for cancel key press (e.g., Escape key)
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 CancelPlacement();
             }
@@ -49,7 +63,8 @@ public class TowerPlacement : MonoBehaviour
         {
             isPlacing = true;
             currentTower = Instantiate(towerPrefab);
-            towerHeight = currentTower.GetComponent<Renderer>().bounds.size.y;
+            currentTower.layer = LayerMask.NameToLayer(temporaryLayerName); // Set to temporary layer
+            towerSize = currentTower.GetComponent<Renderer>().bounds.size;
         }
     }
 
@@ -57,7 +72,9 @@ public class TowerPlacement : MonoBehaviour
     {
         if (currentTower != null)
         {
-            // You can add any additional logic here, like checking for valid placement, etc.
+            // Assign the "CantPlace" tag and set to the placement layer
+            currentTower.tag = "CantPlace";
+            currentTower.layer = LayerMask.NameToLayer("PlacedObjects");
             currentTower = null;
             isPlacing = false;
         }
@@ -71,5 +88,32 @@ public class TowerPlacement : MonoBehaviour
             currentTower = null;
         }
         isPlacing = false;
+    }
+
+    private bool IsColliding(Vector3 position)
+    {
+        // Use Physics.OverlapBox to check if the placement area is colliding with any other colliders
+        Vector3 halfExtents = towerSize / 2;
+        Collider[] colliders = Physics.OverlapBox(position, halfExtents, Quaternion.identity, placementLayer);
+
+        // Return true if there are any colliders intersecting, false otherwise
+        return colliders.Length > 0;
+    }
+
+    private bool IsCollidingWithTag(Vector3 position, string tag)
+    {
+        Vector3 halfExtents = towerSize / 2;
+        Collider[] colliders = Physics.OverlapBox(position, halfExtents, Quaternion.identity, placementLayer);
+
+        // Check if any of the colliders have the specified tag
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag(tag))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
