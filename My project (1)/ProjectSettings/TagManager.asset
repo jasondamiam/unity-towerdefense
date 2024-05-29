@@ -6,6 +6,7 @@ TagManager:
   tags:
   - platform
   - occupied
+  - CantPlace
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Placement ground
-  - 
-  - 
+  - PlacedObjects
+  - IgnorePlacement
   - 
   - 
   - 

@@ -156,7 +156,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  towerHeight: 0
+  placementLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &250222068
 Transform:
   m_ObjectHideFlags: 0
