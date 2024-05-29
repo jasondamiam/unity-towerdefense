@@ -499,10 +499,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 1.1024046
+  m_Height: 3.9999998
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: -0.75, y: 1.6, z: 1.6}
 --- !u!23 &272462362
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -566,9 +566,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vindpunten:
-  - {x: 111.77, y: 476.7, z: -384.8}
-  snelheid: 10
-  naartoe: 0
+  - {x: -151.0379, y: -1149.45, z: 842.17}
+  snelheid: 50
+  naartoe: 1
 --- !u!1 &347419916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1014,37 @@ MonoBehaviour:
   vindpunten: []
   snelheid: 10
   naartoe: 0
+--- !u!1 &830036976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830036977}
+  m_Layer: 0
+  m_Name: waypoint 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &830036977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830036976}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -8.1672613e-10, w: 1}
+  m_LocalPosition: {x: -262.03787, y: -1149.45, z: 842.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054750356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,3 +2112,4 @@ SceneRoots:
   - {fileID: 1054750360}
   - {fileID: 1977549168}
   - {fileID: 224286172}
+  - {fileID: 830036977}
