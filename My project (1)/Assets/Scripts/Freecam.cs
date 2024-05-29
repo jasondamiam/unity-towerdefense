@@ -16,34 +16,18 @@ using UnityEngine;
 ///	mouse			- free look / rotation
 public class FreeCam : MonoBehaviour
 {
-    /// <summary>
-    /// Normal speed of camera movement.
-    /// </summary>
+
     public float movementSpeed = 10f;
-
-    /// <summary>
-    /// Speed of camera movement when shift is held down,
-    /// </summary>
     public float fastMovementSpeed = 100f;
-
-    /// <summary>
-    /// Sensitivity for free look.
-    /// </summary>
     public float freeLookSensitivity = 3f;
-
-    /// <summary>
-    /// Amount to zoom the camera when using the mouse wheel.
-    /// </summary>
     public float zoomSensitivity = 10f;
-
-    /// <summary>
-    /// Amount to zoom the camera when using the mouse wheel (fast mode).
-    /// </summary>
     public float fastZoomSensitivity = 50f;
-
-    /// <summary>
-    /// Set to true when free looking (on right mouse button).
-    /// </summary>
+    public float minusyThreshold;
+    public float yThreshold;
+    public float minusxThreshold;
+    public float xThreshold;
+    public float minuszThreshold;
+    public float zThreshold;
     private bool looking = false;
 
     void Update()
@@ -112,6 +96,11 @@ public class FreeCam : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             StopLooking();
+        }
+
+        if(transform.position.y < minusyThreshold || transform.position.y > yThreshold || transform.position.x < minusxThreshold || transform.position.x > xThreshold || transform.position.z < minuszThreshold || transform.position.z > zThreshold)
+        {
+            transform.position = new Vector3(0f, 0f, 0f);
         }
     }
 
