@@ -10,6 +10,8 @@ public class TowerPlacement : MonoBehaviour
     private GameObject currentTower;
     public LayerMask groundLayer;
     public LayerMask placementLayer;
+    public float cost;
+    public money moneyScript;
     private bool isPlacing = false;
     private Vector3 towerSize;
     private string temporaryLayerName = "IgnorePlacement";
@@ -48,6 +50,10 @@ public class TowerPlacement : MonoBehaviour
                     }
                 }
             }
+            if (moneyScript.startAmount < cost) 
+            {
+                CancelPlacement();
+            }
 
             // Check for cancel key press (e.g., Escape key)
             if (Input.GetKeyDown(KeyCode.Z))
@@ -77,6 +83,7 @@ public class TowerPlacement : MonoBehaviour
             currentTower.layer = LayerMask.NameToLayer("PlacedObjects");
             currentTower = null;
             isPlacing = false;
+            moneyScript.startAmount -= cost;
         }
     }
 
