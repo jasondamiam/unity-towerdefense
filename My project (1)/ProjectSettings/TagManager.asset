@@ -7,6 +7,7 @@ TagManager:
   - platform
   - occupied
   - CantPlace
+  - end
   layers:
   - Default
   - TransparentFX
