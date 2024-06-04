@@ -16,4 +16,10 @@ public class gameStats : MonoBehaviour
 
         healthBar.SetSliderMax(maxHealth);
     }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        healthBar.SetSlider(currentHealth);
+    }
 }
