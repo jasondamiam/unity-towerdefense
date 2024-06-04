@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,7 +9,7 @@ public class Enemy : MonoBehaviour
     public List<Vector3> vindpunten = new List<Vector3>();
     public float snelheid = 10;
     public int naartoe;
-    
+    public float health;
     void Start()
     {
         
@@ -22,6 +23,11 @@ public class Enemy : MonoBehaviour
         if(transform.position == vindpunten[naartoe])
         {
             naartoe++;
+            if(naartoe == vindpunten.Count)
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
     
@@ -31,6 +37,15 @@ public class Enemy : MonoBehaviour
         for(int i = 0; i < vindpunten.Count - 1; i++)
         {
             Gizmos.DrawLine(vindpunten[i], vindpunten[i + 1]);
+        }
+    }
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("WHAAAAAAAAAAAAAAA");
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
