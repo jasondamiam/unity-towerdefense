@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe818d93b25ecb4bb78ca11723ab391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 6247701255434378704, guid: 95bbe804e2fff534a837d998a7c97e96, type: 3}
+  towerPrefab: {fileID: 1495284273724530966, guid: 1df6a1b074b38434ca54e35151cc462d, type: 3}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   placementLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   cost: 10
   moneyScript: {fileID: 415347500}
 --- !u!4 &250222068
