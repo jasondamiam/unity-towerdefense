@@ -8,6 +8,7 @@ TagManager:
   - occupied
   - Enemy
   - CantPlace
+  - end
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - IgnorePlacement
-  - 
-  - 
+  - Placement ground
+  - PlacedObjects
   - 
   - 
   - 

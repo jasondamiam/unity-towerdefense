@@ -155,10 +155,10 @@ MonoBehaviour:
   towerPrefab: {fileID: 6247701255434378704, guid: 95bbe804e2fff534a837d998a7c97e96, type: 3}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   placementLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   cost: 10
   moneyScript: {fileID: 415347500}
 --- !u!4 &250222068
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 588499499}
   - component: {fileID: 588499498}
   - component: {fileID: 588499497}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
