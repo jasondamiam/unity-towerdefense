@@ -60,6 +60,12 @@ public class TowerPlacement : MonoBehaviour
             {
                 CancelPlacement();
             }
+
+            if (isPlacing && Input.GetKeyDown(KeyCode.T)) 
+            {
+                RotateTower();
+            }
+
         }
     }
 
@@ -95,6 +101,10 @@ public class TowerPlacement : MonoBehaviour
             currentTower = null;
         }
         isPlacing = false;
+    }
+    private void RotateTower()
+    {
+        currentTower.transform.Rotate(0, 90, 0);
     }
 
     private bool IsColliding(Vector3 position)
