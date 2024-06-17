@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float snelheid = 10;
     public int naartoe;
     public float health;
+    private EnemySpawner wavespawner;
     void Start()
     {
         
