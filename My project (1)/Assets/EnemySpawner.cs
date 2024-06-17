@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
         countdown -= Time.deltaTime;
 
 
-        if (countdown <= 0)
+        if (countdown <= 0 && currentwaveindex < waves.Length)
         {
             countdown = waves[currentwaveindex].TimeToNextWave;
             StartCoroutine(SpawnWave()); 
@@ -35,11 +35,12 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Spawning enemy");
         for (int i = 0; i < waves[currentwaveindex].enemies.Length; i++)
         {
-            //GameObject.tag = "Player";
+            
             Enemy enemy = Instantiate (waves[currentwaveindex].enemies[i],Spawnpoint.transform).GetComponent<Enemy>();
             enemy.transform.SetParent(Spawnpoint.transform);
             yield return new WaitForSeconds(waves[currentwaveindex].TimeToNextEnemy);
         }
+        currentwaveindex++;
     }
 
     [System.Serializable]

@@ -15,7 +15,7 @@ public class Shootingturret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _Player = GameObject.FindGameObjectWithTag("Player").transform;
+        //_Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
