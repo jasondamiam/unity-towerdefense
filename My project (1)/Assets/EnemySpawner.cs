@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Spawning enemy");
         for (int i = 0; i < waves[currentwaveindex].enemies.Length; i++)
         {
-            //GameObject.tag = "Player";
+            gameObject.tag = "Player";
             Enemy enemy = Instantiate (waves[currentwaveindex].enemies[i],Spawnpoint.transform).GetComponent<Enemy>();
             enemy.transform.SetParent(Spawnpoint.transform);
             yield return new WaitForSeconds(waves[currentwaveindex].TimeToNextEnemy);
