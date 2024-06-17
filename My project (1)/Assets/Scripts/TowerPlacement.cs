@@ -60,6 +60,12 @@ public class TowerPlacement : MonoBehaviour
             {
                 CancelPlacement();
             }
+
+            if (isPlacing && Input.GetKeyDown(KeyCode.T)) 
+            {
+                RotateTower();
+            }
+
         }
     }
 
@@ -71,6 +77,12 @@ public class TowerPlacement : MonoBehaviour
             currentTower = Instantiate(towerPrefab);
             currentTower.layer = LayerMask.NameToLayer(temporaryLayerName); // Set to temporary layer
             towerSize = currentTower.GetComponent<Renderer>().bounds.size;
+
+            Shootingturret shootingTurret = currentTower.GetComponent<Shootingturret>();
+            if (shootingTurret != null) 
+            {
+                shootingTurret.enabled = false;
+            }
         }
     }
 
@@ -81,9 +93,16 @@ public class TowerPlacement : MonoBehaviour
             // Assign the "CantPlace" tag and set to the placement layer
             currentTower.tag = "CantPlace";
             currentTower.layer = LayerMask.NameToLayer("PlacedObjects");
+
+            Shootingturret shootingTurret = currentTower.GetComponent<Shootingturret>();
+            if(shootingTurret != null)
+            {
+                shootingTurret.enabled = true;
+            }
+
+            moneyScript.startAmount -= cost;
             currentTower = null;
             isPlacing = false;
-            moneyScript.startAmount -= cost;
         }
     }
 
@@ -95,6 +114,10 @@ public class TowerPlacement : MonoBehaviour
             currentTower = null;
         }
         isPlacing = false;
+    }
+    private void RotateTower()
+    {
+        currentTower.transform.Rotate(0, 90, 0);
     }
 
     private bool IsColliding(Vector3 position)
