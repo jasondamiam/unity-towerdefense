@@ -6,7 +6,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
 
-    public GameObject PausePanel, TowerSelector, MoneyScreen;
+    public GameObject PausePanel, TowerSelector, MoneyScreen, HealthBar, GameOver;
     private bool PauseMenuOn = false;
     // Update is called once per frame
     void Update()
@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(true);
         TowerSelector.SetActive(false);
         MoneyScreen.SetActive(false);
+        HealthBar.SetActive(false);
+        GameOver.SetActive(false);
         Time.timeScale = 0;
         PauseMenuOn = true;
     }
@@ -38,6 +40,8 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(false);
         TowerSelector.SetActive(true);
         MoneyScreen.SetActive(true);
+        HealthBar.SetActive(true);
+        GameOver.SetActive(false);
         Time.timeScale = 1;
         PauseMenuOn = false;
     }
