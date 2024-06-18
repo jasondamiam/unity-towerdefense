@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SylvesterScene.unity
+    guid: 70beeaf933f6b02428c1d7776b596183
+  - enabled: 1
+    path: Assets/Scenes/theme park map.unity
+    guid: 765af8c48ffd05c418bf4d8ffec93b92
   m_configObjects: {}
