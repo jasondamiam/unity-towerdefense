@@ -8,6 +8,6 @@ public class endDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<gameStats>().TakeDamage(damage);
+        GetComponent<gameStats>().MinusHealth(damage);
     }
 }
