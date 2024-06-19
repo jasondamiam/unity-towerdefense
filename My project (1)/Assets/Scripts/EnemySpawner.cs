@@ -40,7 +40,10 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.SetParent(Spawnpoint.transform);
             yield return new WaitForSeconds(waves[currentwaveindex].TimeToNextEnemy);
         }
-        currentwaveindex++;
+        if(currentwaveindex +1 < waves.Length - 1)
+        {
+            currentwaveindex++;
+        }
     }
 
     [System.Serializable]
