@@ -6,6 +6,11 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    [SerializeField] private float countdown;
+    [SerializeField] private GameObject Spawnpoint;
+    public wave[] waves;
+    private int currentwaveindex = 0;
     private void Start()
     {
         for (int i = 0; i < waves.Length; i++)
@@ -13,10 +18,6 @@ public class EnemySpawner : MonoBehaviour
             waves[i].enemiesleft = waves[i].enemies.Length;
         }
     }
-    [SerializeField]private float countdown;
-    [SerializeField] private GameObject Spawnpoint;
-    public wave[] waves;
-    private int currentwaveindex = 0;
     private void Update()
     {
         countdown -= Time.deltaTime;
@@ -40,9 +41,10 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.SetParent(Spawnpoint.transform);
             yield return new WaitForSeconds(waves[currentwaveindex].TimeToNextEnemy);
         }
-        if(currentwaveindex +1 < waves.Length - 1)
+        if(currentwaveindex + 1 < waves.Length)
         {
             currentwaveindex++;
+            countdown = waves[currentwaveindex].TimeToNextWave;
         }
     }
 
