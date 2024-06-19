@@ -1728,12 +1728,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Player: {fileID: 0}
   dist: 0
-  HowClose: 0
+  HowClose: 400
   Head: {fileID: 1298350434}
-  _Projectile: {fileID: 2005236838}
-  projectilespeed: 16
-  FireRate: 15
-  NextFire: 150
+  _Projectile: {fileID: 303628647358960984, guid: 868b1fb5bde1a564f866d0f607cdd678, type: 3}
+  projectilespeed: 4500
+  FireRate: 7
+  NextFire: -12
   damage: 100
 --- !u!1 &718092230
 GameObject:
