@@ -6385,13 +6385,6 @@ MonoBehaviour:
     - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
     - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
     - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
     TimeToNextEnemy: 5
     TimeToNextWave: 10.08
     enemiesleft: 0
@@ -6399,13 +6392,6 @@ MonoBehaviour:
     - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
     - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
     - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
     TimeToNextEnemy: 5
     TimeToNextWave: 5
     enemiesleft: 0
@@ -6413,13 +6399,6 @@ MonoBehaviour:
     - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
     - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
     - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
-    - {fileID: 2976801100891436484, guid: 419f00fe96009f345b4bdf580a79da0e, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 3060623368992814056, guid: 4caa989469740db458b700d64aaea19a, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
-    - {fileID: 6989479031286713468, guid: 3398e3dfeb5253f4ba9334a9000f3dcc, type: 3}
     TimeToNextEnemy: 2
     TimeToNextWave: 10
     enemiesleft: 0
