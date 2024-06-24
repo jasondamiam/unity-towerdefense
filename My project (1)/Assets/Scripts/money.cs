@@ -17,4 +17,9 @@ public class money : MonoBehaviour
     {
         amountonScreen.SetText("$" + startAmount.ToString());
     }
+
+    public void addMoney(float amount)
+    {
+        startAmount += amount;
+    }
 }

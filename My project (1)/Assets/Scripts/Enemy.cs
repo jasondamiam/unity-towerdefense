@@ -11,8 +11,9 @@ public class Enemy : MonoBehaviour
     public int naartoe;
     public float health;
     public float damage;
+    public float money;
     private EnemySpawner wavespawner;
-    public GameObject healthStats;
+    public GameObject gameStats;
     void Start()
     {
         
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
             if(naartoe == vindpunten.Count)
             {
                 Destroy(gameObject);
-                healthStats.GetComponent<gameStats>().MinusHealth(damage);
+                gameStats.GetComponent<gameStats>().MinusHealth(damage);
             }
 
         }
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            gameStats.GetComponent<money>().addMoney(money);
         }
     }
 }
