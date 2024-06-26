@@ -9,6 +9,8 @@ public class gameStats : MonoBehaviour
 
     private float currentHealth;
 
+    private FreeCam cam;
+
     public Health healthBar;
 
     public GameObject PausePanel, TowerSelector, MoneyScreen, HealthBar, GameOver;
@@ -18,6 +20,12 @@ public class gameStats : MonoBehaviour
         currentHealth = maxHealth;
 
         healthBar.SetSliderMax(maxHealth);
+
+        cam = GetComponent<FreeCam>();
+        if (cam != null)
+        {
+            cam.enabled = true;
+        }
     }
 
     public void MinusHealth(float amount)

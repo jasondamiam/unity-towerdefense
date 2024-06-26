@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour
     public GameObject gameStats;
     void Start()
     {
-        
+        gameStats = GameObject.Find("Canvas");
+        wavespawner = FindAnyObjectByType<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -35,13 +36,21 @@ public class Enemy : MonoBehaviour
 
         }
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         for(int i = 0; i < vindpunten.Count - 1; i++)
         {
             Gizmos.DrawLine(vindpunten[i], vindpunten[i + 1]);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(wavespawner != null)
+        {
+            wavespawner.enemyDestroyed();
         }
     }
     public void TakeDamage(float damage)
