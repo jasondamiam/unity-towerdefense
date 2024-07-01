@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class FreeCam : MonoBehaviour
 {
 
@@ -19,6 +20,10 @@ public class FreeCam : MonoBehaviour
     public float zThreshold;
     private bool looking = false;
 
+    void Start()
+    {
+        enabled = true;
+    }
     void Update()
     {
         var fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);

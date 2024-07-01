@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 921918521032980470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.6926679, z: -0, w: 0.72125673}
-  m_LocalPosition: {x: 0.2826992, y: 1.1298305, z: -0.10912}
+  m_LocalPosition: {x: 0.436, y: 1.1298305, z: -0.10912}
   m_LocalScale: {x: 0.09613721, y: 0.0833789, z: 0.37957588}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,7 +137,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   Head: {fileID: 585895528237613142}
   _Projectile: {fileID: 5917266143593194592, guid: d4cf52a297e0b4f469d5533074e789a1, type: 3}
   projectilespeed: 500
-  FireRate: 2
+  FireRate: 5
   NextFire: -1
   damage: 2
 --- !u!1 &3162026709010867555

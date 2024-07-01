@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float countdown;
     [SerializeField] private GameObject Spawnpoint;
     public wave[] waves;
-    public GameObject PausePanel, TowerSelector, MoneyScreen, HealthBar, GameOver;
+    public GameObject PausePanel, TowerSelector, MoneyScreen, HealthBar, GameOver, GameWin;
     private int currentwaveindex = 0;
     private int activeEnemies = 0;
     private bool allWavesSpawned = false;
@@ -87,7 +87,8 @@ public class EnemySpawner : MonoBehaviour
         TowerSelector.SetActive(false);
         MoneyScreen.SetActive(false);
         HealthBar.SetActive(false);
-        GameOver.SetActive(true);
+        GameOver.SetActive(false);
+        GameWin.SetActive(true);
         Time.timeScale = 0;
     }
 }
