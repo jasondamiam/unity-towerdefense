@@ -11,11 +11,13 @@ public class Enemy : MonoBehaviour
     public int naartoe;
     public float health;
     public float damage;
+    public float money;
     private EnemySpawner wavespawner;
-    public GameObject healthStats;
+    public GameObject gameStats;
     void Start()
     {
-        
+        gameStats = GameObject.Find("Canvas");
+        wavespawner = FindAnyObjectByType<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -29,18 +31,26 @@ public class Enemy : MonoBehaviour
             if(naartoe == vindpunten.Count)
             {
                 Destroy(gameObject);
-                healthStats.GetComponent<gameStats>().MinusHealth(damage);
+                gameStats.GetComponent<gameStats>().MinusHealth(damage);
             }
 
         }
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         for(int i = 0; i < vindpunten.Count - 1; i++)
         {
             Gizmos.DrawLine(vindpunten[i], vindpunten[i + 1]);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(wavespawner != null)
+        {
+            wavespawner.enemyDestroyed();
         }
     }
     public void TakeDamage(float damage)
@@ -50,6 +60,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            gameStats.GetComponent<money>().addMoney(money);
         }
     }
 }
